@@ -1,16 +1,17 @@
 # AMD Ryzen Hackintosh
 
-[![MacOS version](https://img.shields.io/badge/Catalina-10.15.7-informational.svg)](https://www.apple.com/macos) [![MacOS version](https://img.shields.io/badge/Bigsur-11.7.7-informational.svg)](https://www.apple.com/macos) [![MacOS version](https://img.shields.io/badge/Monterey-12.6.7-informational.svg)](https://www.apple.com/macos) [![MacOS version](https://img.shields.io/badge/Ventura-13.5-informational.svg)](https://www.apple.com/macos) [![MacOS version](https://img.shields.io/badge/Sonoma-14.0%20beta3-informational.svg)](https://www.apple.com/macos) \
-[![OpenCore version](https://img.shields.io/badge/OpenCore-0.9.3-informational.svg)](https://github.com/acidanthera/OpenCorePkg)\
+[![MacOS version](https://img.shields.io/badge/Bigsur-11.7.7-informational.svg)](https://www.apple.com/macos) [![MacOS version](https://img.shields.io/badge/Monterey-12.7.2-informational.svg)](https://www.apple.com/macos) [![MacOS version](https://img.shields.io/badge/Ventura-13.6.3-informational.svg)](https://www.apple.com/macos) [![MacOS version](https://img.shields.io/badge/Sonoma-14.3%20beta2-informational.svg)](https://www.apple.com/macos) \
+[![OpenCore version](https://img.shields.io/badge/OpenCore-0.9.7-informational.svg)](https://github.com/acidanthera/OpenCorePkg)\
 [![GitHub](https://img.shields.io/github/license/sileshn/Ryzentosh?style=flat-square)](https://github.com/sileshn/Ryzentosh/blob/master/LICENSE)
 
-<a href="https://postimg.cc/WdzvYsny" target="_blank"><img src="https://i.postimg.cc/WdzvYsny/Screenshot-2022-07-13-at-11-29-46-AM.png" alt="Screenshot-2022-07-13-at-11-29-46-AM"/></a> <a href="https://postimg.cc/mcWSTcTC" target="_blank"><img src="https://i.postimg.cc/mcWSTcTC/Screenshot_2023-05-19_at_8.26.25_AM.png" alt="Screenshot_2023-05-19_at_8.26.25_AM"/></a> <a href="https://postimg.cc/KRGGg28q" target="_blank"><img src="https://i.postimg.cc/KRGGg28q/Screenshot_2023-06-22_at_6.20.16_AM.png" alt="Screenshot_2023-06-22_at_6.20.16_AM"/></a> <a href="https://postimg.cc/757nWZy1" target="_blank"><img src="https://i.postimg.cc/757nWZy1/Screenshot_2023-07-19_at_4.07.51_AM.png" alt="Screenshot_2023-07-19_at_4.07.51_AM"/></a> <a href="https://postimg.cc/pyCh083Q" target="_blank"><img src="https://i.postimg.cc/pyCh083Q/tempImagen5sqmJ.jpg" alt="tempImagen5sqmJ"/></a>
+<a href="https://postimg.cc/mcWSTcTC" target="_blank"><img src="https://i.postimg.cc/mcWSTcTC/Screenshot_2023-05-19_at_8.26.25_AM.png" alt="Screenshot_2023-05-19_at_8.26.25_AM"/></a> <a href="https://postimg.cc/JHhGGP5J" target="_blank"><img src="https://i.postimg.cc/JHhGGP5J/tempImageMHTS10.jpg" alt="tempImageMHTS10"/></a> <a href='https://postimg.cc/JGPTgK0k' target='_blank'><img src='https://i.postimg.cc/JGPTgK0k/temp-Imageq9-BGZa.jpg' border='0' alt='temp-Imageq9-BGZa'/></a> <a href="https://postimg.cc/k2by51YH" target="_blank"><img src="https://i.postimg.cc/k2by51YH/temp-Image-Zhqgje.jpg" alt="temp-Image-Zhqgje"/></a>
 ## Disclaimer
 Use at your own risk. I take no responsiblity if your rig explodes. Create unique SMBios values for your rig. Don't copy ones shown in the config.plist!!!
 
 ## Important information
 * This EFI supports only MacOS versions catalina(10.15) and higher. Your system will not boot if you use this on Mojave and High Sierra. As a result, there will be only 3 core count patches in this EFI instead of the usual 4.
 * Incremental OTA updates starting from Ventura may fail and force you to download the full installer. This is probably due to BluetoolFixup and IntelBluetoothFirmware kext's. If you use these kext's in your setup like i do, you can overcome this issue by disabling the kext's in your config.plist prior to running your updates and enable them back post updation.
+* For Sonoma OTA updates to show up, you will need to add `revpatch=sbvmm` to your boot-args.
 * Universal patches introduced [here](https://github.com/sileshn/Ryzentosh/commit/adcb87fa003a0e77afaded014984a00ecb07b775) and updates for Ventura 13.3+ introduced [here](https://github.com/sileshn/Ryzentosh/commit/00aab441a0a8a0fbcc9532c7beb51bbec24d85cb) requires you to change the core count of your processor. More information can be found [here](https://github.com/AMD-OSX/AMD_Vanilla#read-me-first).
 * Wifi and bluetooth may or may not work on Sonoma depending on your hardware.
 * Press spacebar to view additional options in the OC bootscreen.
@@ -58,7 +59,7 @@ Use at your own risk. I take no responsiblity if your rig explodes. Create uniqu
 
 I use OpenCore to multiboot Manjaro, Windows(10&11) and MacOS(Catalina, BigSur, Monterey & Ventura)
 
-[![13060127.png](https://i.postimg.cc/nLFcQJvB/13060127.png)](https://postimg.cc/CR2VW9rx)
+[![04000725.png](https://i.postimg.cc/ZqdPpQj7/04000725.png)](https://postimg.cc/069JqcTD)
 
 ## Credits and links
 
