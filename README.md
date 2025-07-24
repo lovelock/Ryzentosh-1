@@ -1,22 +1,21 @@
 # AMD Ryzen Hackintosh
 
-[![MacOS version](https://img.shields.io/badge/Bigsur-11.7.7-informational.svg)](https://www.apple.com/macos) [![MacOS version](https://img.shields.io/badge/Monterey-12.7.3-informational.svg)](https://www.apple.com/macos) [![MacOS version](https://img.shields.io/badge/Ventura-13.6.4-informational.svg)](https://www.apple.com/macos) [![MacOS version](https://img.shields.io/badge/Sonoma-14.5%20beta2-informational.svg)](https://www.apple.com/macos) \
-[![OpenCore version](https://img.shields.io/badge/OpenCore-0.9.9-informational.svg)](https://github.com/acidanthera/OpenCorePkg)\
+[![MacOS version](https://img.shields.io/badge/Ventura-13.7.4-informational.svg)](https://www.apple.com/macos) [![MacOS version](https://img.shields.io/badge/Sonoma-14.7.6-informational.svg)](https://www.apple.com/macos) [![MacOS version](https://img.shields.io/badge/Sequoia-15.6%20beta2-informational.svg)](https://www.apple.com/macos) [![MacOS version](https://img.shields.io/badge/Tahoe-26.0%20beta2-informational.svg)](https://www.apple.com/macos)\
+[![OpenCore version](https://img.shields.io/badge/OpenCore-1.0.5-informational.svg)](https://github.com/acidanthera/OpenCorePkg)\
 [![GitHub](https://img.shields.io/github/license/sileshn/Ryzentosh?style=flat-square)](https://github.com/sileshn/Ryzentosh/blob/master/LICENSE)
 
-<a href="https://postimg.cc/mcWSTcTC" target="_blank"><img src="https://i.postimg.cc/mcWSTcTC/Screenshot_2023-05-19_at_8.26.25_AM.png" alt="Screenshot_2023-05-19_at_8.26.25_AM"/></a> <a href="https://postimg.cc/VJPsThGw" target="_blank"><img src="https://i.postimg.cc/VJPsThGw/temp-Image26-C8-TR.jpg" alt="temp-Image26-C8-TR"/></a> <a href="https://postimg.cc/nMsHLxNZ" target="_blank"><img src="https://i.postimg.cc/nMsHLxNZ/temp-Image45-Yy-Gt.jpg" alt="temp-Image45-Yy-Gt"/></a> <a href="https://postimg.cc/xJgFxdSf" target="_blank"><img src="https://i.postimg.cc/xJgFxdSf/temp-Imagep-R6-XGb.avif" alt="temp-Imagep-R6-XGb"/></a>
+<a href="https://ibb.co/NnphwxbM"><img src="https://i.ibb.co/NnphwxbM/Screenshot-2025-02-23-at-4-33-40-PM.png" alt="Screenshot-2025-02-23-at-4-33-40-PM" border="0" /></a> <a href="https://ibb.co/prxFBGQ5"><img src="https://i.ibb.co/prxFBGQ5/Screenshot-2025-05-13-at-8-58-04-AM.png" alt="Screenshot-2025-05-13-at-8-58-04-AM" border="0"></a> <a href="https://ibb.co/6cBnWZC9"><img src="https://i.ibb.co/6cBnWZC9/Screenshot-2025-07-01-at-7-18-43-AM.png" alt="Screenshot-2025-07-01-at-7-18-43-AM" border="0"></a> <a href="https://ibb.co/XxCJNmjj"><img src="https://i.ibb.co/XxCJNmjj/Screenshot-2025-06-24-at-6-55-19-PM.png" alt="Screenshot-2025-06-24-at-6-55-19-PM" border="0"></a>
 ## Disclaimer
 Use at your own risk. I take no responsiblity if your rig explodes. Create unique SMBios values for your rig. Don't copy ones shown in the config.plist!!!
 
 ## Important information
 * This EFI supports only MacOS versions catalina(10.15) and higher. Your system will not boot if you use this on Mojave and High Sierra. As a result, there will be only 3 core count patches in this EFI instead of the usual 4.
-* Incremental OTA updates starting from Ventura may fail and force you to download the full installer. This is probably due to BluetoolFixup and IntelBluetoothFirmware kext's. If you use these kext's in your setup like i do, you can overcome this issue by disabling the kext's in your config.plist prior to running your updates and enable them back post updation.
-* For Sonoma OTA updates to show up, you will need to add `revpatch=sbvmm` to your boot-args.
+* Incremental OTA updates starting from Ventura may fail and force you to download the full installer. This is probably due to BluetoolFixup kext. If you use BluetoolFixup in your setup like i do, you can overcome this issue by disabling the kext in your config.plist prior to running your updates and enable them back post updation.
 * Universal patches introduced [here](https://github.com/sileshn/Ryzentosh/commit/adcb87fa003a0e77afaded014984a00ecb07b775) and updates for Ventura 13.3+ introduced [here](https://github.com/sileshn/Ryzentosh/commit/00aab441a0a8a0fbcc9532c7beb51bbec24d85cb) requires you to change the core count of your processor. More information can be found [here](https://github.com/AMD-OSX/AMD_Vanilla#read-me-first).
-* Wifi and bluetooth may or may not work on Sonoma depending on your hardware.
 * Press spacebar to view additional options in the OC bootscreen.
-* `IntelBTPatcher.kext`, `IntelBluetoothFirmware.kext` & `BlueToolFixup.kext` are disabled by default. Enable them if you want bluetooth support.
-* `Securebootmodel` should be set to `Disabled` for Sonoma 14.4 beta installs.
+* `Securebootmodel` should be set to `Disabled` for `Sonoma >= 14.4 & Sequoia` installs. You can change it back after the update.
+* You will need to use [Helliport app](https://github.com/diepeterpan/HeliPort/releases/tag/v1.5.0) for wifi in Sequoia & Tahoe.
+* AppleALC doesn't work on Tahoe.
 
 ## Specification
 
@@ -40,8 +39,10 @@ Use at your own risk. I take no responsiblity if your rig explodes. Create uniqu
 
 ## Not Working ( only ones I have tried, there may be more )
 
+* Audio doesn't work on Tahoe with AppleALC
 * Sleep ( on Monterey )
 * Sidecar
+* Wifi ( itlwm works on Sequoia & Tahoe with Heliport app )
 
 ## Patches, Drivers & Kexts
 
@@ -59,9 +60,9 @@ Use at your own risk. I take no responsiblity if your rig explodes. Create uniqu
 
 ## Bootloader
 
-I use OpenCore to multiboot Manjaro, Windows(10&11) and MacOS(Catalina, BigSur, Monterey & Ventura)
+I use OpenCore to multiboot Solus, Windows 11 and MacOS(Monterey, Ventura, Sonoma, Sequoia) using the [BsxOc1](https://github.com/blackosx/BsxOc1) theme.
 
-[![04000725.png](https://i.postimg.cc/ZqdPpQj7/04000725.png)](https://postimg.cc/069JqcTD)
+[![12024137.png](https://i.postimg.cc/63Tz2132/12024137.png)](https://postimg.cc/G8wv6Kvd)
 
 ## Credits and links
 
